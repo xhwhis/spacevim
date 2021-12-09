@@ -1,7 +1,6 @@
 # 所有的 SpaceVim 选项都列在 [options] 之下
 [options]
     colorscheme = "dracula"
-    colorscheme_bg = "dark"
     # 启用/禁用终端真色，在目前大多数终端下都是支持真色的，当然也有
     # 一小部分终端不支持真色，如果你的 SpaceVim 颜色看上去比较怪异
     # 可以禁用终端真色，将下面的值设为 false
@@ -24,7 +23,6 @@
     # 字样，只以颜色区分当前模式
     enable_statusline_mode = false
 
-    filemanager = "defx"
     autocomplete_method = "coc"
     bootstrap_before = "myspacevim#before"
     bootstrap_after = "myspacevim#after"
@@ -49,7 +47,7 @@
 
 [[custom_plugins]]
     name = "neoclide/coc.nvim"
-    merge = false
+    merged = false
     build = "yarn install --frozen-lockfile"
 
 [[custom_plugins]]
