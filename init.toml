@@ -23,9 +23,9 @@
     # 字样，只以颜色区分当前模式
     enable_statusline_mode = false
 
-    autocomplete_method = "coc"
     bootstrap_before = "myspacevim#before"
     bootstrap_after = "myspacevim#after"
+    autocomplete_method = "coc"
     relativenumber = false
     default_indent = 4
     expand_tab = true

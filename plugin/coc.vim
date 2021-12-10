@@ -165,41 +165,54 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 call coc#config("languageserver", {
-    \"ccls": {
-        \"command": "ccls",
-        \"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-        \"rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
-        \"initializationOptions": {
-            \"cache": {
-                \"directory": "/tmp/ccls"
-            \}
-        \}
-    \},
-    \"cmake": {
-        \"command": "cmake-language-server",
-        \"filetypes": ["cmake"],
-        \"rootPatterns": ["build/"],
-        \"initializationOptions": {
-            \"buildDirectory": "build"
-        \}
-    \},
-    \"golang": {
-        \"command": "gopls",
-        \"args": ["serve", "-debug", "0.0.0.0:8484", "-rpc.trace"],
-        \"rootPatterns": ["go.mod"],
-        \"filetypes": ["go"]
-    \}
+    \ "golang": {
+        \ "command": "gopls",
+        \ "args": ["serve", "-debug", "0.0.0.0:8484", "-rpc.trace"],
+        \ "rootPatterns": ["go.mod"],
+        \ "filetypes": ["go"]
+    \ },
+    \ "ccls": {
+        \ "command": "ccls",
+        \ "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+        \ "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+        \ "initializationOptions": {
+            \ "cache": {
+                \ "directory": "/tmp/ccls"
+            \ }
+        \ }
+    \ },
+    \ "cmake": {
+        \ "command": "cmake-language-server",
+        \ "filetypes": ["cmake"],
+        \ "rootPatterns": ["build/"],
+        \ "initializationOptions": {
+            \ "buildDirectory": "build"
+        \ }
+    \ }
 \})
 
 let s:coc_extensions = [
-    \'coc-sh',
-    \'coc-markdownlint',
-    \'coc-json',
-    \'coc-snippets',
-    \'coc-tag'
+    \ 'coc-sh',
+    \ 'coc-markdownlint',
+    \ 'coc-json',
+    \ 'coc-snippets',
+    \ 'coc-tag'
 \]
 
 for extension in s:coc_extensions
     call coc#add_extension(extension)
 endfor
+
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? coc#_select_confirm() :
+    \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
