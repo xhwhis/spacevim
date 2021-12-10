@@ -43,16 +43,13 @@
     ]
 
 [[layers]]
-    name = "checkers"
-    enable = false
+    name = "chinese"
 
 [[layers]]
     name = "VersionControl"
-    enable-gtm-status = true
 
 [[layers]]
     name = "git"
-    git-plugin = "fugitive"
 
 [[layers]]
     name = "fzf"
