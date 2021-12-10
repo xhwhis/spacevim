@@ -1,0 +1,29 @@
+snippet istart "start coding" b
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <math.h>
+#include <limits.h>
+
+int main() {
+	$0
+	return 0;
+}
+endsnippet
+
+snippet MAX "define max" b
+#define MAX(a, b) ({ \
+	__typeof(a) _a = (a); \
+	__typeof(b) _b = (b); \
+	_a > _b ? _a : _b; \
+})
+endsnippet
+
+snippet MIN "define min" b
+#define MAX(a, b) ({ \
+	__typeof(a) _a = (a); \
+	__typeof(b) _b = (b); \
+	_a < _b ? _a : _b; \
+})
+endsnippet

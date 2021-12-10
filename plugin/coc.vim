@@ -164,3 +164,42 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+call coc#config("languageserver", {
+    \"ccls": {
+        \"command": "ccls",
+        \"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+        \"rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+        \"initializationOptions": {
+            \"cache": {
+                \"directory": "/tmp/ccls"
+            \}
+        \}
+    \},
+    \"cmake": {
+        \"command": "cmake-language-server",
+        \"filetypes": ["cmake"],
+        \"rootPatterns": ["build/"],
+        \"initializationOptions": {
+            \"buildDirectory": "build"
+        \}
+    \},
+    \"golang": {
+        \"command": "gopls",
+        \"args": ["serve", "-debug", "0.0.0.0:8484", "-rpc.trace"],
+        \"rootPatterns": ["go.mod"],
+        \"filetypes": ["go"]
+    \}
+\})
+
+let s:coc_extensions = [
+    \'coc-sh',
+    \'coc-markdownlint',
+    \'coc-json',
+    \'coc-snippets',
+    \'coc-tag'
+\]
+
+for extension in s:coc_extensions
+    call coc#add_extension(extension)
+endfor
+

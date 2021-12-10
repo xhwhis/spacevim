@@ -28,6 +28,7 @@
     bootstrap_after = "myspacevim#after"
     relativenumber = false
     default_indent = 4
+    expand_tab = true
     vim_help_language = "cn"
     custom_color_palette = [
         ['#282C34', '#98C379', 114, 235],
@@ -41,19 +42,33 @@
         ['#282828', '#8f3f71', 235, 132],
     ]
 
+[[layers]]
+    name = "checkers"
+    enable = false
+
+[[layers]]
+    name = "VersionControl"
+    enable-gtm-status = true
+
+[[layers]]
+    name = "git"
+    git-plugin = "fugitive"
+
+[[layers]]
+    name = "fzf"
+
+[[layers]]
+    name = "autocomplete"
+
+[[layers]]
+    name = "lsp"
+
 [[custom_plugins]]
     name = "dracula/vim"
-    merged = false
 
 [[custom_plugins]]
     name = "neoclide/coc.nvim"
-    merged = false
     build = "yarn install --frozen-lockfile"
 
 [[custom_plugins]]
-    name = "jiangmiao/auto-pairs"
-    merged = false
-
-[[custom_plugins]]
     name = "wakatime/vim-wakatime"
-    merged = false
