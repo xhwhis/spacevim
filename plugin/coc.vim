@@ -188,6 +188,11 @@ call coc#config("languageserver", {
         \ "initializationOptions": {
             \ "buildDirectory": "build"
         \ }
+    \ },
+    \ "sql": {
+        \ "command": "sql-language-server",
+        \ "args" : ["up", "--method", "stdio"],
+        \ "filetypes": ["sql", "mysql"]
     \ }
 \})
 
