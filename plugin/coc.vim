@@ -211,6 +211,7 @@ call coc#config("languageserver", {
 
 let s:coc_extensions = [
     \ 'coc-sh',
+    \ 'coc-solargraph',
     \ 'coc-markdownlint',
     \ 'coc-json',
     \ 'coc-snippets',
