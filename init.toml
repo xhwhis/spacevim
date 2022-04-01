@@ -60,6 +60,9 @@
 [[layers]]
     name = "lsp"
 
+[[layers]]
+    name = "lang#markdown"
+
 [[custom_plugins]]
     name = "dracula/vim"
 
