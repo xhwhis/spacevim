@@ -1,74 +1,62 @@
-# 所有的 SpaceVim 选项都列在 [options] 之下
+#=============================================================================
+# basic.toml --- basic configuration example for SpaceVim
+# Copyright (c) 2016-2022 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg@outlook.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+# All SpaceVim option below [option] section
 [options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer
     colorscheme = "dracula"
-    # 启用/禁用终端真色，在目前大多数终端下都是支持真色的，当然也有
-    # 一小部分终端不支持真色，如果你的 SpaceVim 颜色看上去比较怪异
-    # 可以禁用终端真色，将下面的值设为 false
-    enable_guicolors = true
-    # 设置状态栏上分割符号形状，如果字体安装失败，可以将值设为 "nil" 以
-    # 禁用分割符号，默认为箭头 "arrow"
+    colorscheme_bg = "dark"
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors
+    enable_guicolors = false
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
     statusline_separator = "arraw"
     statusline_iseparator = "bar"
-    # 设置顶部标签列表序号类型，有以下五种类型，分别是 0 - 4
-    # 0: 1 ➛ ➊
-    # 1: 1 ➛ ➀
-    # 2: 1 ➛ ⓵
-    # 3: 1 ➛ ¹
-    # 4: 1 ➛ 1
     buffer_index_type = 4
-    # 显示/隐藏顶部标签栏上的文件类型图标，这一图标需要安装 nerd fonts，
-    # 如果未能成功安装这一字体，可以隐藏图标
-    enable_tabline_filetype_icon = true
-    # 是否在状态栏上显示当前模式，默认情况下，不显示 Normal/Insert 等
-    # 字样，只以颜色区分当前模式
-    enable_statusline_mode = false
-
-    bootstrap_before = "myspacevim#before"
-    bootstrap_after = "myspacevim#after"
-    autocomplete_method = "coc"
+    windows_index_type = 3
+    enable_tabline_filetype_icon = false
+    enable_statusline_mode = true
+    statusline_unicode = false
+    # Enable vim compatible mode, avoid changing origin vim key bindings
+    vimcompatible = true
     relativenumber = false
     default_indent = 4
     expand_tab = true
-    vim_help_language = "cn"
-    custom_color_palette = [
-        ['#282C34', '#98C379', 114, 235],
-        ['#ABB2BF', '#3E4452', 236, 144],
-        ['#ABB2BF', '#3B4048', 238, 144],
-        ['#5C6370', 59],
-        ['#282c34', '#00af87', 235, 36],
-        ['#282c34', '#ff8700', 235, 208],
-        ['#282c34', '#af5f5f', 235, 131],
-        ['#282828', '#689d6a', 235, 72],
-        ['#282828', '#8f3f71', 235, 132],
-    ]
+    autocomplete_method = "coc"
+    disabled_plugins = ["nvim-lspconfig"]
+
+# Enable autocomplete layer
+[[layers]]
+    name = 'autocomplete'
+    auto_completion_return_key_behavior = "complete"
+    auto_completion_tab_key_behavior = "cycle"
 
 [[layers]]
-    name = "chinese"
-
-[[layers]]
-    name = "VersionControl"
-
-[[layers]]
-    name = "git"
-
-[[layers]]
-    name = "fzf"
-
-[[layers]]
-    name = "autocomplete"
+    name = 'shell'
+    default_position = 'top'
+    default_height = 30
 
 [[layers]]
     name = "lsp"
 
 [[layers]]
-    name = "lang#markdown"
+    name = "format"
+    format_on_save = true
 
 [[custom_plugins]]
-    name = "dracula/vim"
+    repo = "dracula/vim"
+    name = "dracula"
+    merged = false
 
 [[custom_plugins]]
-    name = "neoclide/coc.nvim"
-    build = "yarn install --frozen-lockfile"
-
-[[custom_plugins]]
-    name = "wakatime/vim-wakatime"
+    repo = "wakatime/vim-wakatime"
+    name = "wakatime"
+    merged = false

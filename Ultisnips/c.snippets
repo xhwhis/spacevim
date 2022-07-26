@@ -1,4 +1,4 @@
-snippet istart "start coding" b
+snippet head "code head" b
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,6 +10,7 @@ int main() {
 	$0
 	return 0;
 }
+
 endsnippet
 
 snippet MAX "define max" b
@@ -18,6 +19,7 @@ snippet MAX "define max" b
 	__typeof(b) _b = (b); \
 	_a > _b ? _a : _b; \
 })
+
 endsnippet
 
 snippet MIN "define min" b
@@ -26,4 +28,5 @@ snippet MIN "define min" b
 	__typeof(b) _b = (b); \
 	_a < _b ? _a : _b; \
 })
+
 endsnippet

@@ -188,24 +188,6 @@ call coc#config("languageserver", {
         \ "initializationOptions": {
             \ "buildDirectory": "build"
         \ }
-    \ },
-    \ "sql": {
-        \ "command": "sql-language-server",
-        \ "args" : ["up", "--method", "stdio"],
-        \ "filetypes": ["sql"],
-        \ "settings": {
-            \ "sqlLanguageServer": {
-                \ "connections": [
-                    \ {
-                        \ "name": "postgres@localhost",
-                        \ "adapter": "postgres",
-                        \ "host": "127.0.0.1",
-                        \ "port": 5432,
-                        \ "database": "postgres"
-                    \ }
-                \ ]
-            \ }
-        \ }
     \ }
 \})
 
