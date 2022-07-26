@@ -30,6 +30,7 @@
     relativenumber = false
     default_indent = 4
     expand_tab = true
+    vim_help_language = "cn"
     autocomplete_method = "coc"
     disabled_plugins = ["nvim-lspconfig"]
 
@@ -50,6 +51,24 @@
 [[layers]]
     name = "format"
     format_on_save = true
+
+[[layers]]
+    name = "chinese"
+
+[[layers]]
+    name = "fzf"
+
+[[layers]]
+    name = "git"
+
+[[layers]]
+    name = "VersionControl"
+
+[[layers]]
+    name = "lang#c"
+
+[[layers]]
+    name = "lang#go"
 
 [[custom_plugins]]
     repo = "dracula/vim"
