@@ -62,6 +62,12 @@
     name = "git"
 
 [[layers]]
+    name = "sudo"
+
+[[layers]]
+    name = "test"
+
+[[layers]]
     name = "VersionControl"
 
 [[layers]]
