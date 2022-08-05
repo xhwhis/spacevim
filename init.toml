@@ -70,12 +70,6 @@
 [[layers]]
     name = "VersionControl"
 
-[[layers]]
-    name = "lang#c"
-
-[[layers]]
-    name = "lang#go"
-
 [[custom_plugins]]
     repo = "dracula/vim"
     name = "dracula"
