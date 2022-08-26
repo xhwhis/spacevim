@@ -175,6 +175,7 @@ call coc#config("languageserver", {
 \})
 
 let s:coc_extensions = [
+    \ 'coc-rust-analyzer',
     \ 'coc-sh',
     \ 'coc-solargraph',
     \ 'coc-phpls',
