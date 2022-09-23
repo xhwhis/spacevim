@@ -32,7 +32,6 @@
     expand_tab = true
     vim_help_language = "cn"
     autocomplete_method = "coc"
-    disabled_plugins = ["nvim-lspconfig"]
 
 # Enable autocomplete layer
 [[layers]]
