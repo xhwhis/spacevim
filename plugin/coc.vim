@@ -171,11 +171,17 @@ call coc#config("languageserver", {
         \ "initializationOptions": {
             \ "buildDirectory": "build"
         \ }
+    \ },
+    \ "dockerfile": {
+        \ "command": "docker-langserver",
+        \ "filetypes": ["dockerfile"],
+        \ "args": ["--stdio"]
     \ }
 \})
 
 let s:coc_extensions = [
     \ 'coc-rust-analyzer',
+    \ 'coc-markdownlint',
     \ 'coc-sh',
     \ 'coc-solargraph',
     \ 'coc-phpls',
