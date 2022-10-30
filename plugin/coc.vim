@@ -172,6 +172,12 @@ call coc#config("languageserver", {
             \ "buildDirectory": "build"
         \ }
     \ },
+    \ "bash": {
+        \ "command": "bash-language-server",
+        \ "args": ["start"],
+        \ "filetypes": ["sh"],
+        \ "ignoredRootPaths": ["~"]
+    \ },
     \ "dockerfile": {
         \ "command": "docker-langserver",
         \ "filetypes": ["dockerfile"],
@@ -182,7 +188,6 @@ call coc#config("languageserver", {
 let s:coc_extensions = [
     \ 'coc-rust-analyzer',
     \ 'coc-markdownlint',
-    \ 'coc-sh',
     \ 'coc-solargraph',
     \ 'coc-phpls',
     \ 'coc-json',
