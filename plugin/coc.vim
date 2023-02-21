@@ -190,6 +190,7 @@ let s:coc_extensions = [
     \ 'coc-markdownlint',
     \ 'coc-solargraph',
     \ 'coc-phpls',
+    \ 'coc-toml',
     \ 'coc-json',
     \ 'coc-snippets',
     \ 'coc-tag'
